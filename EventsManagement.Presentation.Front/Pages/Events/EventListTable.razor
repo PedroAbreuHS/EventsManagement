@@ -1,0 +1,90 @@
+﻿@if (Events == null)
+{
+    <p> <em> Loading Page ... </em> </p>
+}
+else
+{
+    <a class="btn btn-primary mb-3 me-2" href="/Events/Create"> Adicionar Evento </a>
+
+    <table class="table mb-5 table-bordered table-striped">
+
+        <thead class="table-primary">
+            <tr class="text-center">
+
+                <th> Identificador </th>
+                <th> Título </th>
+                <th> Descrição </th>
+                <th> Data de Início </th>
+                <th> Evento Diário </th>
+                <th> Ações </th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var evento in Events)
+            {
+                <tr>
+
+                    <td class="text-center"> @evento.Id </td>
+                    <td> @evento.Title </td>
+                    <td> @evento.Description </td>
+                    <td class="text-center"> @evento.Start </td>
+                    <td class="text-center">
+
+                        @if (evento.AllDay)
+                        {
+                            <span class="badge rounded-pill text-bg-success"> Sim </span>
+                        }
+                        else
+                        {
+                            <span class="badge rounded-pill text-bg-warning"> Não </span>
+                        }
+
+                    </td>
+                    <td style="white-space: nowrap; width: 10px">
+                        <a class="btn btn-info btn-sm" href="/Events/Edit/@evento.Id"> Editar </a>
+                        <button class="btn btn-danger btn-sm" @onclick="async () => await DeleteEvent(evento.Id)"> Remover </button>
+                    </td>
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+}
+
+@inject HttpClient http;
+@inject SweetAlertService Swal;
+@code {
+
+    private List<Event>? Events;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Events = await http.GetFromJsonAsync<List<Event>>("/api/Events");
+    }
+
+    private async Task DeleteEvent(int id)
+    {
+
+        SweetAlertResult result = await Swal.FireAsync(new SweetAlertOptions
+            {
+                Title = "Possui certeza de que é necessário excluir este item?",
+                Text = "Esta ação não poderá ser desfeita!",
+                Icon = SweetAlertIcon.Warning,
+                ShowCancelButton = true,
+                ConfirmButtonText = "Remover",
+                CancelButtonText = "Cancelar"
+            });
+
+        if (!string.IsNullOrEmpty(result.Value))
+        {
+            await http.DeleteAsync("/api/Events/" + id);
+            Events = await http.GetFromJsonAsync<List<Event>>("/api/Events");
+        }
+    }
+
+}

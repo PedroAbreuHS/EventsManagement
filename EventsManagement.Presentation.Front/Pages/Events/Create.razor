@@ -1,0 +1,104 @@
+﻿@page "/Events/Create"
+
+
+
+<h1> Criar Evento </h1>
+
+<div class="row mb-5" >
+
+    <div class="col-log-8" >
+
+        <h2 class="mb-5" > Vamos Criar um Evento </h2>
+
+        <div class="row mb-3" >
+
+            <div class="row mb-3" >
+                <label class="col-md-4 col-form-label"> Título </label>
+                <div class="col-md-8">
+                    <input class="form-control" @bind="EventDtoData.Title" />
+                    <span class="text-danger" > @Errors["Title"]?[0] </span>
+                </div>
+            </div>
+
+            <div class="row mb-3" >
+                <label class="col-md-4 col-form-label"> Data Início </label>
+                <div class="col-md-8">
+                    <input type="datetime-local" class="form-control" @bind="EventDtoData.Start" />
+                    <span class="text-danger"> @Errors["Start"]?[0] </span>
+                </div>
+            </div>
+
+            <div class="row mb-3" >
+                <label class="col-md-4 col-form-label"> Data Fim </label>
+                <div class="col-md-8">
+                    <input type="datetime-local" class="form-control" @bind="EventDtoData.End" />
+                    <span class="text-danger"> @Errors["End"]?[0] </span>
+                </div>
+            </div>
+
+            <div class="row mb-3" >
+                <label class="col-md-4 col-form-label"> Descrição </label>
+                <div class="col-md-8">
+                    <textarea class="form-control" @bind="EventDtoData.Description" />
+                    <span class="text-danger"> @Errors["Description"]?[0] </span>
+                </div>
+            </div>
+
+            <div class="row mb-3" >
+                <div class="col-md-8 offset-md-4" >
+                    <div class="form-check" >
+                        <input class="form-check-input " type="checkbox" @bind="EventDtoData.AllDay" />
+                        <label class="form-check-label" > Dia todo </label>
+                        <span class="text-danger"> @Errors["AllDay"] </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" >
+                <div class="offset-md-4 col-md-4 d-grid" >
+                    <button class="btn btn-primary" @onclick="SaveEvent" > Salvar </button>
+                </div>
+                <div class="col-md-4 d-grid" >
+                    <a class="btn btn-outline-primary" href="/Events" > Cancelar </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+@inject HttpClient http;
+@inject NavigationManager navigationManager;
+@code {
+    public EventDto EventDtoData { get; set; } = new();
+
+    public JsonNode Errors { get; set; } = new JsonObject();
+
+    private async Task SaveEvent()
+    {
+        var response = await http.PostAsJsonAsync("/api/Events", EventDtoData);
+
+        if (response.IsSuccessStatusCode)
+        {
+            navigationManager.NavigateTo("/Events");
+        }
+        else
+        {
+            var stringResponse = await response.Content.ReadAsStringAsync();            
+
+            try
+            {
+                var jsonResponse = JsonNode.Parse(stringResponse);                
+
+                Errors = jsonResponse?["errors"] ?? new JsonObject();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
+}

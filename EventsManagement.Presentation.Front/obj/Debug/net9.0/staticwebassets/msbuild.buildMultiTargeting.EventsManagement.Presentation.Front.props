@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\EventsManagement.Presentation.Front.props" />
+</Project>

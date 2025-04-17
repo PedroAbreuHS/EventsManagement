@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Novo Perfil",
+    "Projects": [
+      {
+        "Path": "EventsManagement.Presentation.API\\EventsManagement.Presentation.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "EventsManagement.Presentation.Front\\EventsManagement.Presentation.Front.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

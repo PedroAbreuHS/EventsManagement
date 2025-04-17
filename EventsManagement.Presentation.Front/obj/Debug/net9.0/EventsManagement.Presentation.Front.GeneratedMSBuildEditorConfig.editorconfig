@@ -1,0 +1,65 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = EventsManagement.Presentation.Front
+build_property.RootNamespace = EventsManagement.Presentation.Front
+build_property.ProjectDir = C:\ProjetosAvulsosDotNet\EventsManagement\EventsManagement.Presentation.Front\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\ProjetosAvulsosDotNet\EventsManagement\EventsManagement.Presentation.Front
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/ProjetosAvulsosDotNet/EventsManagement/EventsManagement.Presentation.Front/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjetosAvulsosDotNet/EventsManagement/EventsManagement.Presentation.Front/Pages/Events/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRzXENyZWF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjetosAvulsosDotNet/EventsManagement/EventsManagement.Presentation.Front/Pages/Events/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRzXEVkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjetosAvulsosDotNet/EventsManagement/EventsManagement.Presentation.Front/Pages/Events/EventList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRzXEV2ZW50TGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjetosAvulsosDotNet/EventsManagement/EventsManagement.Presentation.Front/Pages/Events/EventListAgenda.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRzXEV2ZW50TGlzdEFnZW5kYS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjetosAvulsosDotNet/EventsManagement/EventsManagement.Presentation.Front/Pages/Events/EventListTable.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRzXEV2ZW50TGlzdFRhYmxlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjetosAvulsosDotNet/EventsManagement/EventsManagement.Presentation.Front/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjetosAvulsosDotNet/EventsManagement/EventsManagement.Presentation.Front/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjetosAvulsosDotNet/EventsManagement/EventsManagement.Presentation.Front/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-w84pac6r9v
+
+[C:/ProjetosAvulsosDotNet/EventsManagement/EventsManagement.Presentation.Front/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-thi0dwe302

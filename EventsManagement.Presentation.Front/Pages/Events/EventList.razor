@@ -1,0 +1,38 @@
+﻿@page "/Events"
+
+<div class="row mb-30" >
+
+    <div class="col" >
+
+        <h1>Listagem de Eventos</h1>
+
+    </div>
+
+    <div class="col" >
+
+        <div class="form-check form-switch form-check-reverse" >
+            <input class="form-check-input" type="checkbox" role="switch" @bind="ShowAgenda" />
+            <label class="form-check-label @(ShowAgenda ? "text-dark" : "text-secundary")"> Calendário </label>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+@if (ShowAgenda)
+{
+    <EventListAgenda></EventListAgenda>
+}
+else
+{
+    <EventListTable></EventListTable>
+}
+
+
+
+
+@code{
+    private bool ShowAgenda;
+}
